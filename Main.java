@@ -14,14 +14,16 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        System.out.print("Введите число x (x > 2): ");
+        System.out.print("Введите число x: ");
         double x = in.nextInt();
-        if(x < 2){
-            System.out.println("Неверное значение x.");
+        System.out.print("Введите количество шагов (x > 2): ");
+        double n = in.nextInt();
+        if(n < 2){
+            System.out.println("Неверное значение n.");
         }
         else{
             double result = 0;
-            for(int i = 2; i <= x; i++){
+            for(int i = 2; i <= ((int)n) + 1; i++){
                 result = result + (Math.pow(x, i) / factorial(i));
             }
             System.out.printf("%.3f", result);
